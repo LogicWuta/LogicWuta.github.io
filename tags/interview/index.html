@@ -184,7 +184,7 @@
 <h1 id="注入bean的注解"><a href="#注入bean的注解" class="headerlink" title="注入bean的注解"></a>注入bean的注解</h1><p>@Autowired 自动装配注解，其作用是为了消除Java代码里面的getter/setter与bean属性中的property。@Autowired默认按类型匹配的方式查找匹配的Bean，当且仅有一个匹配的Bean时，Spring将其注入@AutoWired标注的变量中。默认按照byType方式进行bean匹配，查找不到对应容器会抛出NoSuchBeanDefinitionException。可以将注解的required属性设为false,Spring容器不再抛出异常而是认为属性为null（尚未理解，是指容器属性为null吗）。</p>
 <p>@Qualifier 指定bean名称注入,如果有一个以上匹配的bean，可以通过注解@Qualifier(“bean_id”)限定bean。</p>
 <p>@Resource 与@Autowired相似，默认通过name属性去匹配bean，找不到再按type匹配。可以通过设置注解name，type的其中一个或两个属性去匹配bean，不匹配将报错。</p>
-<p>@Resource 时j2ee注解，@Autowired和@Qualifier是Spring注解。</p>
+<p>@Resource 是j2ee注解，@Autowired和@Qualifier是Spring注解。</p>
 <hr>
 <h1 id="java配置类相关注解"><a href="#java配置类相关注解" class="headerlink" title="java配置类相关注解"></a>java配置类相关注解</h1><p>@Configuration 声明当前类为配置类，相当于xml形式的Spring配置。其中内部组合了Component注解，表面这个类是一个bean。</p>
 <p>@Bean 注解在方法上，声明当前方法的返回值为一个bean，替代xml中的方式。</p>
@@ -238,6 +238,55 @@
 <p>@ModelAttribute 本来的作用是绑定键值对到Model里，在@ControllerAdvice中是让全局的@RequestMapping都能获得在此处设置的键值对。</p>
 <hr>
 <p>以上内容整理自网络，如有遗漏或有误的地方，希望帮忙指出。</p>
+<hr>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-09-25T09:03:19.000Z">2019-09-25</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 minutes read (About 431 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/09/25/建达笔试面试-1/">建达笔试面试</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><p>面试前需要先做一份笔试题。笔试题比较基础，但考得相当细。<br>面试完之后会有小哥过来技术面，根据试卷问相关问题，再谈一谈你做的项目。<br>之后是主管面试，谈一下你会的项目和框架，然后就是上家的工资，再问你对公司的看法或<br>者疑问。</p>
+<hr>
+<h2 id="笔试"><a href="#笔试" class="headerlink" title="笔试"></a>笔试</h2><p>笔试其实是比较简单的，不过本人才疏学浅，做的一般。<br>10道选择题，10道看代码，3道算法，6道数据库，2道简单题。<br>总体比较基础，但考很多细节。<br>看代码写输出个人感觉是最难的。</p>
+<p>算法偏简单，题目如下：<br>写一个函数将输入的字符串倒序输出。<br>写一个函数实现计算1+12+22+…+n2。<br>写一个函数实现身份证号的校验，15位或18位，最后一位可为字母，输出出生日期。<br>忘了还有一道前端题，写一个下拉框，点击下拉框中的属性可使文本框内出现这个属性值。</p>
+<p>数据库常规,多表查询，join,group by,order by,count。</p>
+<p>简答题：<br>session和cookies的异同点。<br>Java序列化的作用。</p>
+<hr>
+<h2 id="面试"><a href="#面试" class="headerlink" title="面试"></a>面试</h2><p>面试分两轮，技术面和主管面。<br>技术面主要会在试卷算法题和数据库题上面拓展。<br>小哥问了我算法第二题可以用递归吗？还有我做的项目里的数据库设计，开发流程，增加论<br>坛的二级回复功能怎么实现。</p>
 <hr>
 
         </div>
@@ -432,7 +481,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/java-interview/" style="font-size: 10px;">java interview</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a>
+        <a href="/tags/interview/" style="font-size: 20px;">interview</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a>
     </div>
 </div>
 
@@ -554,13 +603,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/interview/">
                         <span class="tag">interview</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/java-interview/">
-                        <span class="tag">java interview</span>
+                    <a class="tags has-addons" href="/tags/java/">
+                        <span class="tag">java</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -709,13 +758,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/interview/">
                         <span class="tag">interview</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/java-interview/">
-                        <span class="tag">java interview</span>
+                    <a class="tags has-addons" href="/tags/java/">
+                        <span class="tag">java</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

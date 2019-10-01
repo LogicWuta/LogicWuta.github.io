@@ -214,8 +214,8 @@
 <p>@RunWith(SpringJUnit4ClassRunner.class)</p>
 <p>@ContextConfiguration 用来加载配置ApplicationContext，其中classes属性用来加载配置类</p>
 <p>@ContextConfiguration(classes={TestConfig.class})</p>
-<p>SpringMVC部分</p>
-<p>@EnableWebMvc 在配置类中开启Web MVC的配置支持，如一些ViewResolver或者MessageConverter等，若无此句，重写WebMvcConfigurerAdapter方法（用于对SpringMVC的配置）。</p>
+<hr>
+<h1 id="SpringMVC注解"><a href="#SpringMVC注解" class="headerlink" title="SpringMVC注解"></a>SpringMVC注解</h1><p>@EnableWebMvc 在配置类中开启Web MVC的配置支持，如一些ViewResolver或者MessageConverter等，若无此句，重写WebMvcConfigurerAdapter方法（用于对SpringMVC的配置）。</p>
 <p>@Controller 声明该类为SpringMVC中的Controller</p>
 <p>@RequestMapping 用于映射Web请求，包括访问路径和参数（类或方法上）</p>
 <p>@ResponseBody 支持将返回值放在response内，而不是一个页面，通常用户返回json数据（返回值旁或方法上）</p>

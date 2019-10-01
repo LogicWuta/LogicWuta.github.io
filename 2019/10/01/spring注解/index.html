@@ -19,7 +19,7 @@
 <meta property="og:description" content="最近面试笔试常问到spring的注解，在这里整理了一下。  容器声明注解@Component 泛指组件，组件不好归类时可以使用。 @Service 标注业务逻辑层组件。 @Repository 标注数据访问层组件。 @Controller 标注控制层层组件。  注入bean的注解@Autowired 自动装配注解，其作用是为了消除Java代码里面的getter/setter与bean属性中的pro">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-10-01T05:22:29.577Z">
+<meta property="og:updated_time" content="2019-10-01T08:54:22.195Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="spring注解">
 <meta name="twitter:description" content="最近面试笔试常问到spring的注解，在这里整理了一下。  容器声明注解@Component 泛指组件，组件不好归类时可以使用。 @Service 标注业务逻辑层组件。 @Repository 标注数据访问层组件。 @Controller 标注控制层层组件。  注入bean的注解@Autowired 自动装配注解，其作用是为了消除Java代码里面的getter/setter与bean属性中的pro">
@@ -218,8 +218,8 @@
 <p>@RunWith(SpringJUnit4ClassRunner.class)</p>
 <p>@ContextConfiguration 用来加载配置ApplicationContext，其中classes属性用来加载配置类</p>
 <p>@ContextConfiguration(classes={TestConfig.class})</p>
-<p>SpringMVC部分</p>
-<p>@EnableWebMvc 在配置类中开启Web MVC的配置支持，如一些ViewResolver或者MessageConverter等，若无此句，重写WebMvcConfigurerAdapter方法（用于对SpringMVC的配置）。</p>
+<hr>
+<h1 id="SpringMVC注解"><a href="#SpringMVC注解" class="headerlink" title="SpringMVC注解"></a>SpringMVC注解</h1><p>@EnableWebMvc 在配置类中开启Web MVC的配置支持，如一些ViewResolver或者MessageConverter等，若无此句，重写WebMvcConfigurerAdapter方法（用于对SpringMVC的配置）。</p>
 <p>@Controller 声明该类为SpringMVC中的Controller</p>
 <p>@RequestMapping 用于映射Web请求，包括访问路径和参数（类或方法上）</p>
 <p>@ResponseBody 支持将返回值放在response内，而不是一个页面，通常用户返回json数据（返回值旁或方法上）</p>

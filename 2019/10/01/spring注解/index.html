@@ -7,17 +7,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>LogicWuta&#39;s Blog</title>
+<title>spring注解 - LogicWuta&#39;s Blog</title>
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="LogicWuta&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+    <meta name="description" content="最近面试笔试常问到spring的注解，在这里整理了一下。  容器声明注解@Component 泛指组件，组件不好归类时可以使用。 @Service 标注业务逻辑层组件。 @Repository 标注数据访问层组件。 @Controller 标注控制层层组件。  注入bean的注解@Autowired 自动装配注解，其作用是为了消除Java代码里面的getter/setter与bean属性中的pro">
+<meta name="keywords" content="spring,interview,注解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="spring注解">
+<meta property="og:url" content="http://yoursite.com/2019/10/01/spring注解/index.html">
 <meta property="og:site_name" content="LogicWuta&#39;s Blog">
+<meta property="og:description" content="最近面试笔试常问到spring的注解，在这里整理了一下。  容器声明注解@Component 泛指组件，组件不好归类时可以使用。 @Service 标注业务逻辑层组件。 @Repository 标注数据访问层组件。 @Controller 标注控制层层组件。  注入bean的注解@Autowired 自动装配注解，其作用是为了消除Java代码里面的getter/setter与bean属性中的pro">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2019-10-01T05:13:37.961Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LogicWuta&#39;s Blog">
+<meta name="twitter:title" content="spring注解">
+<meta name="twitter:description" content="最近面试笔试常问到spring的注解，在这里整理了一下。  容器声明注解@Component 泛指组件，组件不好归类时可以使用。 @Service 标注业务逻辑层组件。 @Repository 标注数据访问层组件。 @Controller 标注控制层层组件。  注入bean的注解@Autowired 自动装配注解，其作用是为了消除Java代码里面的getter/setter与bean属性中的pro">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -88,7 +93,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/build-right.jpg" alt="LogicWuta&#39;s Blog" height="28">
+                <img src="/images/build-right.jpg" alt="spring注解" height="28">
             
             </a>
         </div>
@@ -96,7 +101,7 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item is-active"
+                <a class="navbar-item"
                 href="/">Home</a>
                 
                 <a class="navbar-item"
@@ -138,8 +143,7 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
-    <div class="card">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
     
     <div class="card-content article ">
         
@@ -160,7 +164,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/10/01/spring注解/">spring注解</a>
+                spring注解
             
         </h1>
         <div class="content">
@@ -232,55 +236,15 @@
 
         </div>
         
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-09-25T09:03:19.000Z">2019-09-25</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3 minutes read (About 431 words)
-                </span>
-                
-                
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/interview/">interview</a>, <a class="has-link-grey -link" href="/tags/spring/">spring</a>, <a class="has-link-grey -link" href="/tags/注解/">注解</a>
+                </div>
             </div>
         </div>
         
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/09/25/建达笔试面试-1/">建达笔试面试</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><p>面试前需要先做一份笔试题。笔试题比较基础，但考得相当细。<br>面试完之后会有小哥过来技术面，根据试卷问相关问题，再谈一谈你做的项目。<br>之后是主管面试，谈一下你会的项目和框架，然后就是上家的工资，再问你对公司的看法或<br>者疑问。</p>
-<hr>
-<h2 id="笔试"><a href="#笔试" class="headerlink" title="笔试"></a>笔试</h2><p>笔试其实是比较简单的，不过本人才疏学浅，做的一般。<br>10道选择题，10道看代码，3道算法，6道数据库，2道简单题。<br>总体比较基础，但考很多细节。<br>看代码写输出个人感觉是最难的。</p>
-<p>算法偏简单，题目如下：<br>写一个函数将输入的字符串倒序输出。<br>写一个函数实现计算1+12+22+…+n2。<br>写一个函数实现身份证号的校验，15位或18位，最后一位可为字母，输出出生日期。<br>忘了还有一道前端题，写一个下拉框，点击下拉框中的属性可使文本框内出现这个属性值。</p>
-<p>数据库常规,多表查询，join,group by,order by,count。</p>
-<p>简答题：<br>session和cookies的异同点。<br>Java序列化的作用。</p>
-<hr>
-<h2 id="面试"><a href="#面试" class="headerlink" title="面试"></a>面试</h2><p>面试分两轮，技术面和主管面。<br>技术面主要会在试卷算法题和数据库题上面拓展。<br>小哥问了我算法第二题可以用递归吗？还有我做的项目里的数据库设计，开发流程，增加论<br>坛的二级回复功能怎么实现。</p>
-<hr>
-
-        </div>
-        
         
         
     </div>
@@ -288,55 +252,55 @@
 
 
 
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-09-23T15:25:13.000Z">2019-09-23</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 113 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
             
-                <a class="has-link-black-ter" href="/2019/09/23/firstBlog/">firstBlog</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="博客测试"><a href="#博客测试" class="headerlink" title="博客测试"></a>博客测试</h2><p>A test,hello blog.</p>
-<hr>
-<h2 id="改写博客后部署GitHub失败"><a href="#改写博客后部署GitHub失败" class="headerlink" title="改写博客后部署GitHub失败"></a>改写博客后部署GitHub失败</h2><p>在修改博客后需执行hexo clean清理之前生成的文件。<br>再执行hexo start重新生成文件，退出输入hexo d即可部署。</p>
-<h2 id="hexo-start-error"><a href="#hexo-start-error" class="headerlink" title="hexo start error"></a>hexo start error</h2><p>ERROR Process failed: _posts/firstBlog.md<br>TypeError: Cannot read property ‘utcOffset’ of null</p>
-<p>blog目录下的_config.yml文件中设置的timezone与主题的配置文件中不一致。<br>修改一致后解决。</p>
-<hr>
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
+</div>
 
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<div class="notification is-danger">
+    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
+</div>
+
+                
         </div>
-        
-        
-        
     </div>
 </div>
 
 
 
-
-
-
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/09/25/建达笔试面试-1/">
+                <span class="level-item">建达笔试面试</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
 </div>
@@ -836,7 +800,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/build-right.jpg" alt="LogicWuta&#39;s Blog" height="28">
+                    <img src="/images/build-right.jpg" alt="spring注解" height="28">
                 
                 </a>
                 <p class="is-size-7">

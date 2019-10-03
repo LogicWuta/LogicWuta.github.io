@@ -10,19 +10,19 @@
 <title>leetcode_two-sum - LogicWuta&#39;s Blog</title>
 
 
-    <meta name="description" content="题目给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。 来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/two-sum常规思路循环遍历数组，求出能凑出和的值即target-nums[inde">
+    <meta name="description" content="题目给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。 来源：力扣（LeetCode）链接：https://leetcode-cn.com/problems/two-sum  常规思路循环遍历数组，求出能凑出和的值即target-nums[ind">
 <meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="leetcode_two-sum">
 <meta property="og:url" content="http://yoursite.com/2019/10/03/leetcode-sumoftwoint/index.html">
 <meta property="og:site_name" content="LogicWuta&#39;s Blog">
-<meta property="og:description" content="题目给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。 来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/two-sum常规思路循环遍历数组，求出能凑出和的值即target-nums[inde">
+<meta property="og:description" content="题目给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。 来源：力扣（LeetCode）链接：https://leetcode-cn.com/problems/two-sum  常规思路循环遍历数组，求出能凑出和的值即target-nums[ind">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-10-03T09:09:30.407Z">
+<meta property="og:updated_time" content="2019-10-03T09:29:32.882Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="leetcode_two-sum">
-<meta name="twitter:description" content="题目给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。 来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/two-sum常规思路循环遍历数组，求出能凑出和的值即target-nums[inde">
+<meta name="twitter:description" content="题目给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。 来源：力扣（LeetCode）链接：https://leetcode-cn.com/problems/two-sum  常规思路循环遍历数组，求出能凑出和的值即target-nums[ind">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -170,35 +170,53 @@
         <div class="content">
             <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
 <p>你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。</p>
-<p>来源：力扣（LeetCode）</p>
-<h2 id="链接：https-leetcode-cn-com-problems-two-sum"><a href="#链接：https-leetcode-cn-com-problems-two-sum" class="headerlink" title="链接：https://leetcode-cn.com/problems/two-sum"></a>链接：<a href="https://leetcode-cn.com/problems/two-sum" target="_blank" rel="noopener">https://leetcode-cn.com/problems/two-sum</a></h2><h1 id="常规思路"><a href="#常规思路" class="headerlink" title="常规思路"></a>常规思路</h1><p>循环遍历数组，求出能凑出和的值即target-nums[index]，再在数组中寻找这个值。两次嵌套循环，代码如下：<br>class Solution {<br>    public int[] twoSum(int[] nums, int target) {<br>        int s = nums.length;<br>        for (int i = 0; i &lt; s - 1; i++){<br>            int tmp = target - nums[i];<br>            for (int j = i + 1; j &lt; s; j++){<br>                if (nums[j] == tmp){<br>                    return new int[]{i, j};<br>                }<br>            }<br>        }<br>        return null;<br>    }<br>}</p>
-<p>执行通过，用时19ms，内存消耗36.6MB，速度中游水平56.66%，内存消耗较少92.60%的水平。</p>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/two-sum" target="_blank" rel="noopener">https://leetcode-cn.com/problems/two-sum</a></p>
+<hr>
+<h1 id="常规思路"><a href="#常规思路" class="headerlink" title="常规思路"></a>常规思路</h1><p>循环遍历数组，求出能凑出和的值即target-nums[index]，再在数组中寻找这个值。两次嵌套循环，代码如下：</p>
+<pre><code>class Solution {
+      public int[] twoSum(int[] nums, int target) {
+        int s = nums.length;
+        for (int i = 0; i &lt; s - 1; i++){
+          int tmp = target - nums[i];
+          for (int j = i + 1; j &lt; s; j++){
+            if (nums[j] == tmp){
+              return new int[]{i, j};
+            }
+          }
+        }
+        return null;
+  }
+}</code></pre><p>执行通过，用时19ms，内存消耗36.6MB，速度中游水平56.66%，内存消耗较少92.60%的水平。</p>
 <hr>
 <h1 id="使用HashMap"><a href="#使用HashMap" class="headerlink" title="使用HashMap"></a>使用HashMap</h1><p>思路就是将数组值作为key，下标作为value存放在HashMap里。需要对value进行检查可能为空，因为不能使用同一个数组元素所以还需要加入坐标检查，具体如下。</p>
-<p>import java.util.HashMap;</p>
-<p>class Solution {<br>    public int[] twoSum(int[] nums, int target) {<br>        HashMap&lt;Integer,Integer&gt; hash = new HashMap&lt;Integer,Integer&gt;();</p>
-<pre><code>    int s = nums.length;
-    //将数组的值储存为key,坐标存为value
-    for (int i = 0; i &lt; s; i++){
-       hash.put(nums[i],i);
-    }
+<pre><code>import java.util.HashMap;
 
-    for (int i = 0; i &lt; s; i++){
-        int tmp = target - nums[i];
-        Integer j = hash.get(tmp);
-        //查空
-        if (j == null){
-            continue;
+class Solution {
+      public int[] twoSum(int[] nums, int target) {
+        HashMap&lt;Integer,Integer&gt; hash = new HashMap&lt;Integer,Integer&gt;();
+
+        int s = nums.length;
+        //将数组的值储存为key,坐标存为value
+        for (int i = 0; i &lt; s; i++){
+          hash.put(nums[i],i);
         }
-        //检验是否使用同个坐标的元素
-        if (j == i){
+
+        for (int i = 0; i &lt; s; i++){
+          int tmp = target - nums[i];
+          Integer j = hash.get(tmp);
+          //查空
+          if (j == null){
             continue;
+          }
+          //检验是否使用同个坐标的元素
+          if (j == i){
+            continue;
+          }
+          return new int[]{i, j};
         }
-        return new int[]{i, j};
-    }
-    return null;
-}</code></pre><p>}</p>
-<p>执行结果如下：<br>执行用时 :4 ms, 在所有 Java 提交中击败了94.73%的用户<br>内存消耗 :37.4 MB, 在所有 Java 提交中击败了88.54%的用户</p>
+        return null;
+      }
+}</code></pre><p>执行结果如下：<br>执行用时 :4 ms, 在所有 Java 提交中击败了94.73%的用户<br>内存消耗 :37.4 MB, 在所有 Java 提交中击败了88.54%的用户</p>
 <p>效果提升显著且内存消耗增加不多。</p>
 <hr>
 

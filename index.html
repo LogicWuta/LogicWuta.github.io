@@ -145,6 +145,79 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-10-03T08:04:24.000Z">2019-10-03</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 minutes read (About 449 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/10/03/leetcode-sumoftwoint/">leetcode_two-sum</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。</p>
+<p>来源：力扣（LeetCode）</p>
+<h2 id="链接：https-leetcode-cn-com-problems-two-sum"><a href="#链接：https-leetcode-cn-com-problems-two-sum" class="headerlink" title="链接：https://leetcode-cn.com/problems/two-sum"></a>链接：<a href="https://leetcode-cn.com/problems/two-sum" target="_blank" rel="noopener">https://leetcode-cn.com/problems/two-sum</a></h2><h1 id="常规思路"><a href="#常规思路" class="headerlink" title="常规思路"></a>常规思路</h1><p>循环遍历数组，求出能凑出和的值即target-nums[index]，再在数组中寻找这个值。两次嵌套循环，代码如下：<br>class Solution {<br>    public int[] twoSum(int[] nums, int target) {<br>        int s = nums.length;<br>        for (int i = 0; i &lt; s - 1; i++){<br>            int tmp = target - nums[i];<br>            for (int j = i + 1; j &lt; s; j++){<br>                if (nums[j] == tmp){<br>                    return new int[]{i, j};<br>                }<br>            }<br>        }<br>        return null;<br>    }<br>}</p>
+<p>执行通过，用时19ms，内存消耗36.6MB，速度中游水平56.66%，内存消耗较少92.60%的水平。</p>
+<hr>
+<h1 id="使用HashMap"><a href="#使用HashMap" class="headerlink" title="使用HashMap"></a>使用HashMap</h1><p>思路就是将数组值作为key，下标作为value存放在HashMap里。需要对value进行检查可能为空，因为不能使用同一个数组元素所以还需要加入坐标检查，具体如下。</p>
+<p>import java.util.HashMap;</p>
+<p>class Solution {<br>    public int[] twoSum(int[] nums, int target) {<br>        HashMap&lt;Integer,Integer&gt; hash = new HashMap&lt;Integer,Integer&gt;();</p>
+<pre><code>    int s = nums.length;
+    //将数组的值储存为key,坐标存为value
+    for (int i = 0; i &lt; s; i++){
+       hash.put(nums[i],i);
+    }
+
+    for (int i = 0; i &lt; s; i++){
+        int tmp = target - nums[i];
+        Integer j = hash.get(tmp);
+        //查空
+        if (j == null){
+            continue;
+        }
+        //检验是否使用同个坐标的元素
+        if (j == i){
+            continue;
+        }
+        return new int[]{i, j};
+    }
+    return null;
+}</code></pre><p>}</p>
+<p>执行结果如下：<br>执行用时 :4 ms, 在所有 Java 提交中击败了94.73%的用户<br>内存消耗 :37.4 MB, 在所有 Java 提交中击败了88.54%的用户</p>
+<p>效果提升显著且内存消耗增加不多。</p>
+<hr>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-10-01T03:49:28.000Z">2019-10-01</time>
                 
                 
@@ -383,7 +456,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        3
+                        4
                     </p>
                 </div>
             </div>
@@ -403,7 +476,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        4
+                        5
                     </p>
                 </div>
             </div>
@@ -517,7 +590,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/interview/" style="font-size: 20px;">interview</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a>
+        <a href="/tags/interview/" style="font-size: 20px;">interview</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a>
     </div>
 </div>
 
@@ -531,6 +604,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/10/03/leetcode-sumoftwoint/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="leetcode_two-sum">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-03T08:04:24.000Z">2019-10-03</time></div>
+                    <a href="/2019/10/03/leetcode-sumoftwoint/" class="title has-link-black-ter is-size-6 has-text-weight-normal">leetcode_two-sum</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -607,7 +699,7 @@
                     <span class="level-item">October 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -646,6 +738,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/java/">
                         <span class="tag">java</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/leetcode/">
+                        <span class="tag">leetcode</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -689,6 +788,25 @@
         
         <article class="media">
             
+            <a href="/2019/10/03/leetcode-sumoftwoint/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="leetcode_two-sum">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-03T08:04:24.000Z">2019-10-03</time></div>
+                    <a href="/2019/10/03/leetcode-sumoftwoint/" class="title has-link-black-ter is-size-6 has-text-weight-normal">leetcode_two-sum</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/10/01/spring注解/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="spring注解">
@@ -762,7 +880,7 @@
                     <span class="level-item">October 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -801,6 +919,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/java/">
                         <span class="tag">java</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/leetcode/">
+                        <span class="tag">leetcode</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

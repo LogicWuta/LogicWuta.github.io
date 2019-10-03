@@ -7,12 +7,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Tag: 注解 - LogicWuta&#39;s Blog</title>
+<title>Tag: leetcode - LogicWuta&#39;s Blog</title>
 
 
     <meta property="og:type" content="website">
 <meta property="og:title" content="LogicWuta&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/注解/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/leetcode/index.html">
 <meta property="og:site_name" content="LogicWuta&#39;s Blog">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
@@ -143,7 +143,7 @@
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
             <li><a href="/tags">Tags</a></li>
-            <li class="is-active"><a href="#" aria-current="page">注解</a></li>
+            <li class="is-active"><a href="#" aria-current="page">leetcode</a></li>
         </ul>
         </nav>
     </div>
@@ -155,13 +155,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-10-01T03:49:28.000Z">2019-10-01</time>
+                <time class="level-item has-text-grey" datetime="2019-10-03T08:04:24.000Z">2019-10-03</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    11 minutes read (About 1722 words)
+                    3 minutes read (About 449 words)
                 </span>
                 
                 
@@ -170,74 +170,42 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/10/01/spring注解/">spring注解</a>
+                <a class="has-link-black-ter" href="/2019/10/03/leetcode-sumoftwoint/">leetcode_two-sum</a>
             
         </h1>
         <div class="content">
-            <p>最近面试笔试常问到spring的注解，在这里整理了一下。</p>
+            <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。</p>
+<p>来源：力扣（LeetCode）</p>
+<h2 id="链接：https-leetcode-cn-com-problems-two-sum"><a href="#链接：https-leetcode-cn-com-problems-two-sum" class="headerlink" title="链接：https://leetcode-cn.com/problems/two-sum"></a>链接：<a href="https://leetcode-cn.com/problems/two-sum" target="_blank" rel="noopener">https://leetcode-cn.com/problems/two-sum</a></h2><h1 id="常规思路"><a href="#常规思路" class="headerlink" title="常规思路"></a>常规思路</h1><p>循环遍历数组，求出能凑出和的值即target-nums[index]，再在数组中寻找这个值。两次嵌套循环，代码如下：<br>class Solution {<br>    public int[] twoSum(int[] nums, int target) {<br>        int s = nums.length;<br>        for (int i = 0; i &lt; s - 1; i++){<br>            int tmp = target - nums[i];<br>            for (int j = i + 1; j &lt; s; j++){<br>                if (nums[j] == tmp){<br>                    return new int[]{i, j};<br>                }<br>            }<br>        }<br>        return null;<br>    }<br>}</p>
+<p>执行通过，用时19ms，内存消耗36.6MB，速度中游水平56.66%，内存消耗较少92.60%的水平。</p>
 <hr>
-<h1 id="容器声明注解"><a href="#容器声明注解" class="headerlink" title="容器声明注解"></a>容器声明注解</h1><p>@Component 泛指组件，组件不好归类时可以使用。</p>
-<p>@Service 标注业务逻辑层组件。</p>
-<p>@Repository 标注数据访问层组件。</p>
-<p>@Controller 标注控制层层组件。</p>
-<hr>
-<h1 id="注入bean的注解"><a href="#注入bean的注解" class="headerlink" title="注入bean的注解"></a>注入bean的注解</h1><p>@Autowired 自动装配注解，其作用是为了消除Java代码里面的getter/setter与bean属性中的property。@Autowired默认按类型匹配的方式查找匹配的Bean，当且仅有一个匹配的Bean时，Spring将其注入@AutoWired标注的变量中。默认按照byType方式进行bean匹配，查找不到对应容器会抛出NoSuchBeanDefinitionException。可以将注解的required属性设为false,Spring容器不再抛出异常而是认为属性为null（尚未理解，是指容器属性为null吗）。</p>
-<p>@Qualifier 指定bean名称注入,如果有一个以上匹配的bean，可以通过注解@Qualifier(“bean_id”)限定bean。</p>
-<p>@Resource 与@Autowired相似，默认通过name属性去匹配bean，找不到再按type匹配。可以通过设置注解name，type的其中一个或两个属性去匹配bean，不匹配将报错。</p>
-<p>@Resource 是j2ee注解，@Autowired和@Qualifier是Spring注解。</p>
-<hr>
-<h1 id="java配置类相关注解"><a href="#java配置类相关注解" class="headerlink" title="java配置类相关注解"></a>java配置类相关注解</h1><p>@Configuration 声明当前类为配置类，相当于xml形式的Spring配置。其中内部组合了Component注解，表面这个类是一个bean。</p>
-<p>@Bean 注解在方法上，声明当前方法的返回值为一个bean，替代xml中的方式。</p>
-<p>@ComponentScan 用于对Component进行扫描，替代xml中的方式（类上）。</p>
-<p>@WishlyConfiguration @Configuration和@ComponentScan的组合注解。</p>
-<hr>
-<h1 id="AOP相关注解"><a href="#AOP相关注解" class="headerlink" title="AOP相关注解"></a>AOP相关注解</h1><p>@Aspect 声明一个切面（类上），使用@After、@Before、@Around定义advice，课直接将切点作为参数。</p>
-<p>@PointCut 声明切点，在java配置类中使用@EnableAspectJAutoProxy注解开启Spring对AspectJ代理的支持（类上）。</p>
-<p>@After 在方法执行之后执行。</p>
-<p>@Around 在方法执行之前和之后执行</p>
-<p>@Before 在方法执行之前执行。（这3个都定义在方法上）</p>
-<hr>
-<h1 id="bean属性支持"><a href="#bean属性支持" class="headerlink" title="bean属性支持"></a>bean属性支持</h1><p>@Scope 设置Spring容器创建Bean实例的方式（方法上，需要@Bean注解），设置类型包括：<br>1，Singleton 单例，默认模式，只有一个bean实例。<br>2，Protetype 每次调用新建一个bean。<br>3，Session web项目中给每个http session新建一个bean。<br>4，GlobeSession 给每一个 global http session新建一个bean。</p>
-<p>@StepScope 在Spring Batch中还有涉及。（不了解）</p>
-<p>@PostConstruct 由JSR-250提供，在构造函数执行完之后执行，等价于xml配置文件中bean的initMethod。</p>
-<h2 id="PreDestroy-由JSR-250提供，在Bean销毁之前执行，等价于xml配置文件中bean的destroyMethod"><a href="#PreDestroy-由JSR-250提供，在Bean销毁之前执行，等价于xml配置文件中bean的destroyMethod" class="headerlink" title="@PreDestroy 由JSR-250提供，在Bean销毁之前执行，等价于xml配置文件中bean的destroyMethod."></a>@PreDestroy 由JSR-250提供，在Bean销毁之前执行，等价于xml配置文件中bean的destroyMethod.</h2><h1 id="Value注解"><a href="#Value注解" class="headerlink" title="Value注解"></a>Value注解</h1><p>为属性注值，支持如下方式注入值：<br>1，注入字符 @Value(“Nemo”)String name;<br>2，注入操作系统属性 @Value(“#{systemProperties[‘os.name’]}”)String osName;<br>3， 注入表达式结果 @Value(“#{T(java.lang.Math).random()}”)String randomNumber;<br>4, 注入其他bean属性 @Value(“#{domeClass.name}”)String name;<br>5, 注入文件资源 @Value(“classpath:com/hgs/hello/text.txt”)String Resource file;<br>6, 注入网站资源 @Value(“<a href="http://www.baidu.com&quot;)Resource" target="_blank" rel="noopener">http://www.baidu.com&quot;)Resource</a> url;<br>7，注入配置文件 @Value(“${book.name}}”)String bookName，使用配置要先编写配置文件.properties文件，如test.properties。在使用@PropertySource 加载配置文件，@PropertySource(“classpath:com/hgs/hello/test/test.properties”)(类上)，还需要配置一个PropertySourceConfigurer的bean。</p>
-<hr>
-<h1 id="环境切换"><a href="#环境切换" class="headerlink" title="环境切换"></a>环境切换</h1><p>@Profile 通过设定Environment的ActiveProfiles来设定当前context需要使用的配置环境。（类或方法上）</p>
-<p>@Conditional Spring4中可以使用此注解定义条件化的bean，通过实现Condition接口，并重写matches方法，从而决定该bean是否被实例化。</p>
-<hr>
-<h1 id="异步相关"><a href="#异步相关" class="headerlink" title="异步相关"></a>异步相关</h1><p>@EnableAsync 配置类中，通过此注解开启对异步任务的支持，叙事性AsyncConfigurer接口（类上）</p>
-<p>@Async 在实际执行的bean方法使用该注解来申明其是一个异步任务（方法上或类上所有的方法都将异步，需要@EnableAsync开启异步任务）</p>
-<hr>
-<h1 id="定时任务相关"><a href="#定时任务相关" class="headerlink" title="定时任务相关"></a>定时任务相关</h1><p>@EnableScheduling 在配置类上使用，开启计划任务的支持（类上）</p>
-<p>@Scheduled 来申明这是一个任务，包括cron,fixDelay,fixRate等类型（方法上，需先开启计划任务的支持）</p>
-<hr>
-<h1 id="Enable-注解说明"><a href="#Enable-注解说明" class="headerlink" title="Enable*注解说明"></a>Enable*注解说明</h1><p>@EnableAspectJAutoProxy 开启对AspectJ自动代理的支持</p>
-<p>@EnableAsync 开启异步方法的支持</p>
-<p>@EnableScheduling 开启计划任务的支持</p>
-<p>@EnableWebMvc 开启Web MVC的配置支持</p>
-<p>@EnableConfigurationProperties 开启对@ConfigurationProperties注解配置Bean的支持</p>
-<p>@EnableJpaRepositories 开启对SpringData JPA Repository的支持</p>
-<p>@EnableTransactionManagement 开启注解式事务的支持</p>
-<p>@EnableCaching 开启注解式的缓存支持</p>
-<hr>
-<h1 id="测试相关注解"><a href="#测试相关注解" class="headerlink" title="测试相关注解"></a>测试相关注解</h1><p>@RunWith 运行器，Spring中通常用于对JUnit的支持</p>
-<p>@RunWith(SpringJUnit4ClassRunner.class)</p>
-<p>@ContextConfiguration 用来加载配置ApplicationContext，其中classes属性用来加载配置类</p>
-<p>@ContextConfiguration(classes={TestConfig.class})</p>
-<hr>
-<h1 id="SpringMVC注解"><a href="#SpringMVC注解" class="headerlink" title="SpringMVC注解"></a>SpringMVC注解</h1><p>@EnableWebMvc 在配置类中开启Web MVC的配置支持，如一些ViewResolver或者MessageConverter等，若无此句，重写WebMvcConfigurerAdapter方法（用于对SpringMVC的配置）。</p>
-<p>@Controller 声明该类为SpringMVC中的Controller</p>
-<p>@RequestMapping 用于映射Web请求，包括访问路径和参数（类或方法上）</p>
-<p>@ResponseBody 支持将返回值放在response内，而不是一个页面，通常用户返回json数据（返回值旁或方法上）</p>
-<p>@RequestBody 允许request的参数在request体中，而不是在直接连接在地址后面。（放在参数前）</p>
-<p>@PathVariable 用于接收路径参数，比如@RequestMapping(“/hello/{name}”)申明的路径，将注解放在参数中前，即可获取该值，通常作为Restful的接口实现方法。</p>
-<p>@RestController 该注解为一个组合注解，相当于@Controller和@ResponseBody的组合，注解在类上，意味着，该Controller的所有方法都默认加上了@ResponseBody。</p>
-<p>@ControllerAdvice 通过该注解，我们可以将对于控制器的全局配置放置在同一个位置，注解了@Controller的类的方法可使用@ExceptionHandler、@InitBinder、@ModelAttribute注解到方法上， 这对所有注解了 @RequestMapping的控制器内的方法有效。</p>
-<p>@ExceptionHandler 用于全局处理控制器里的异常</p>
-<p>@InitBinder 用来设置WebDataBinder，WebDataBinder用来自动绑定前台请求参数到Model中。</p>
-<p>@ModelAttribute 本来的作用是绑定键值对到Model里，在@ControllerAdvice中是让全局的@RequestMapping都能获得在此处设置的键值对。</p>
-<hr>
-<p>以上内容整理自网络，如有遗漏或有误的地方，希望帮忙指出。</p>
+<h1 id="使用HashMap"><a href="#使用HashMap" class="headerlink" title="使用HashMap"></a>使用HashMap</h1><p>思路就是将数组值作为key，下标作为value存放在HashMap里。需要对value进行检查可能为空，因为不能使用同一个数组元素所以还需要加入坐标检查，具体如下。</p>
+<p>import java.util.HashMap;</p>
+<p>class Solution {<br>    public int[] twoSum(int[] nums, int target) {<br>        HashMap&lt;Integer,Integer&gt; hash = new HashMap&lt;Integer,Integer&gt;();</p>
+<pre><code>    int s = nums.length;
+    //将数组的值储存为key,坐标存为value
+    for (int i = 0; i &lt; s; i++){
+       hash.put(nums[i],i);
+    }
+
+    for (int i = 0; i &lt; s; i++){
+        int tmp = target - nums[i];
+        Integer j = hash.get(tmp);
+        //查空
+        if (j == null){
+            continue;
+        }
+        //检验是否使用同个坐标的元素
+        if (j == i){
+            continue;
+        }
+        return new int[]{i, j};
+    }
+    return null;
+}</code></pre><p>}</p>
+<p>执行结果如下：<br>执行用时 :4 ms, 在所有 Java 提交中击败了94.73%的用户<br>内存消耗 :37.4 MB, 在所有 Java 提交中击败了88.54%的用户</p>
+<p>效果提升显著且内存消耗增加不多。</p>
 <hr>
 
         </div>

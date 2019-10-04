@@ -145,13 +145,234 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-10-04T14:55:08.000Z">2019-10-04</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 minutes read (About 598 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/10/04/LongestSubstringWithoutRepeatingCharacters/">LongestSubstringWithoutRepeatingCharacters</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。</p>
+<p>示例 1:</p>
+<p>输入: “abcabcbb”<br>输出: 3<br>解释: 因为无重复字符的最长子串是 “abc”，所以其长度为 3。<br>示例 2:</p>
+<p>输入: “bbbbb”<br>输出: 1<br>解释: 因为无重复字符的最长子串是 “b”，所以其长度为 1。<br>示例 3:</p>
+<p>输入: “pwwkew”<br>输出: 3<br>解释: 因为无重复字符的最长子串是 “wke”，所以其长度为 3。<br>     请注意，你的答案必须是 子串 的长度，”pwke” 是一个子序列，不是子串。</p>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters" target="_blank" rel="noopener">https://leetcode-cn.com/problems/longest-substring-without-repeating-characters</a><br>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
+<hr>
+<h1 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h1><p>思路：将字符串中的字符循环存如链表中，每次存入时进行查重，将链表头部移动到重复元素的next节点，并将链表长度减去删去的部分，每次插入后的长度都要和变量max进行对比，大于max则修改max值为当前链表长度。</p>
+<pre><code>class node{
+    public char val;
+    public node next;
+
+    public node(char c){
+        this.val = c;
+        this.next = null;
+    }
+}
+
+class ListC{
+    public node first;
+    public node last;
+    public int count;
+
+    public ListC(node n){
+        this.first = n;
+        this.last = n;
+        count = 1;
+    }
+
+    public void isReaptedAndPush(node n){
+        node tmp = first;
+        int c = 0;
+        while (tmp != null){
+            if (tmp.val == n.val){
+                count = count - c;
+                last.next = n;
+                last = n;
+                first = tmp.next;
+                return;
+            }
+            c++;
+            tmp = tmp.next;
+        }
+        last.next = n;
+        last = n;
+        count++;
+        return;
+    }
+}
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        int l = s.length();
+
+        if (l &lt; 2){
+            return l;
+        }
+
+        ListC list = new ListC(new node(s.charAt(0)));
+        int max = list.count;
+        for (int i = 1; i &lt; l; i++){
+            list.isReaptedAndPush(new node(s.charAt(i)));
+            if (list.count &gt; max){
+                max = list.count;
+            }
+        }
+
+        return max;
+
+
+
+    }
+}</code></pre><p>还有更优的HashMap解法，将字符串的每个字符放入HashMap中作为Key，字符在字符串中的位置作为Value。定义Start，End map变量，初始值Key为第一个字符，Value为-1和0，每次字符放入HashMap中End值变为那个放入的字符。当将检验到重复Key时，将Start值更改为重复的Key值和对应的Value后再修改HashMap中的Value值。计算长度的方法为End的Value减Start的Value，最大长度计算与链表法相同，不多赘述。<br>代码有空补上。</p>
+<hr>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-10-04T14:23:57.000Z">2019-10-04</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 minutes read (About 470 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/10/04/minDepth/">minDepth</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>给定一个二叉树，找出其最小深度。</p>
+<p>最小深度是从根节点到最近叶子节点的最短路径上的节点数量。</p>
+<p>说明: 叶子节点是指没有子节点的节点。</p>
+<p>示例:</p>
+<p>给定二叉树 [3,9,20,null,null,15,7],</p>
+<pre><code> 3
+ / \
+9  20
+  /  \
+ 15   7</code></pre><p>返回它的最小深度  2.</p>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/minimum-depth-of-binary-tree" target="_blank" rel="noopener">https://leetcode-cn.com/problems/minimum-depth-of-binary-tree</a><br>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。<br>这道题之前一次笔试时做到过，但因为太久没写过算法最后只写了深度优先。</p>
+<hr>
+<h1 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h1><p>思路：节点为叶子节点返回1，否则返回左节点和右节点路径的最短值加1。</p>
+<pre><code>class Solution {
+    public int minDepth(TreeNode root) {
+        if (root == null){
+            return 0;
+        }
+        if (root.left == null &amp;&amp; root.right == null){
+            return 1;
+        }
+        if (root.left == null){
+            return minDepth(root.right) + 1;
+        }
+        if (root.right == null){
+            return minDepth(root.left) + 1;
+        }
+        return Math.min(minDepth(root.left),minDepth(root.right)) + 1;  
+    }
+}</code></pre><hr>
+<h1 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h1><p>思路：<br>定义一个LinkedList作为当前栈，存放要遍历的一层节点。<br>在循环中定义一个临时栈用于存放下一层节点。<br>循环遍历当前栈，判断每一个节点是否为叶子节点，是则返回，否则将节点的子节点压入临时栈中。当栈为空时，将临时栈的值赋给当前栈，路径值+1。<br>下次循环又重新声明临时栈，就可以一层一层地遍历二叉树了。</p>
+<pre><code>import java.util.LinkedList;
+class Solution {
+    public int minDepth(TreeNode root) {
+        LinkedList&lt;TreeNode&gt; stackp = new LinkedList&lt;TreeNode&gt;();
+
+
+        if (root == null){
+            return 0;
+        }
+        if (root.left == null &amp;&amp; root.right == null){
+            return 1;
+        }
+        int depth = 0;
+        stackp.add(root);
+        while(true){
+            depth++;
+            LinkedList&lt;TreeNode&gt; stackc = new LinkedList&lt;TreeNode&gt;();
+            while(!stackp.isEmpty()){
+                TreeNode n = stackp.poll();
+                if (n.left == null &amp;&amp; n.right == null){
+                    return depth;
+                }
+                if (n.left == null){
+                    stackc.add(n.right);
+                    continue;
+                }
+                if (n.right == null){
+                    stackc.add(n.left);
+                    continue;
+                }
+                stackc.add(n.left);
+                stackc.add(n.right);
+            }
+            stackp = stackc;
+        }
+    }
+}</code></pre><hr>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-10-03T08:04:24.000Z">2019-10-03</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 449 words)
+                    4 minutes read (About 554 words)
                 </span>
                 
                 
@@ -215,6 +436,20 @@ class Solution {
 }</code></pre><p>执行结果如下：<br>执行用时 :4 ms, 在所有 Java 提交中击败了94.73%的用户<br>内存消耗 :37.4 MB, 在所有 Java 提交中击败了88.54%的用户</p>
 <p>效果提升显著且内存消耗增加不多。</p>
 <hr>
+<h1 id="官方解法HashMap"><a href="#官方解法HashMap" class="headerlink" title="官方解法HashMap"></a>官方解法HashMap</h1><p>官方解法同样是用HashMap，不过在每次向HashMap中put元素前，先进行查找是否有符合条件的key，优化了第二种方法。<br>代码如下：</p>
+<pre><code>class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        Map&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;();
+        for (int i = 0; i &lt; nums.length; i++) {
+            int complement = target - nums[i];
+            if (map.containsKey(complement)) {
+                return new int[] { map.get(complement), i };
+            }
+            map.put(nums[i], i);
+        }
+        throw new IllegalArgumentException(&quot;No two sum solution&quot;);
+    }
+}</code></pre><hr>
 
         </div>
         
@@ -242,7 +477,7 @@ class Solution {
                 <span class="level-item has-text-grey">
                     
                     
-                    11 minutes read (About 1722 words)
+                    11 minutes read (About 1723 words)
                 </span>
                 
                 
@@ -281,7 +516,9 @@ class Solution {
 <h1 id="bean属性支持"><a href="#bean属性支持" class="headerlink" title="bean属性支持"></a>bean属性支持</h1><p>@Scope 设置Spring容器创建Bean实例的方式（方法上，需要@Bean注解），设置类型包括：<br>1，Singleton 单例，默认模式，只有一个bean实例。<br>2，Protetype 每次调用新建一个bean。<br>3，Session web项目中给每个http session新建一个bean。<br>4，GlobeSession 给每一个 global http session新建一个bean。</p>
 <p>@StepScope 在Spring Batch中还有涉及。（不了解）</p>
 <p>@PostConstruct 由JSR-250提供，在构造函数执行完之后执行，等价于xml配置文件中bean的initMethod。</p>
-<h2 id="PreDestroy-由JSR-250提供，在Bean销毁之前执行，等价于xml配置文件中bean的destroyMethod"><a href="#PreDestroy-由JSR-250提供，在Bean销毁之前执行，等价于xml配置文件中bean的destroyMethod" class="headerlink" title="@PreDestroy 由JSR-250提供，在Bean销毁之前执行，等价于xml配置文件中bean的destroyMethod."></a>@PreDestroy 由JSR-250提供，在Bean销毁之前执行，等价于xml配置文件中bean的destroyMethod.</h2><h1 id="Value注解"><a href="#Value注解" class="headerlink" title="Value注解"></a>Value注解</h1><p>为属性注值，支持如下方式注入值：<br>1，注入字符 @Value(“Nemo”)String name;<br>2，注入操作系统属性 @Value(“#{systemProperties[‘os.name’]}”)String osName;<br>3， 注入表达式结果 @Value(“#{T(java.lang.Math).random()}”)String randomNumber;<br>4, 注入其他bean属性 @Value(“#{domeClass.name}”)String name;<br>5, 注入文件资源 @Value(“classpath:com/hgs/hello/text.txt”)String Resource file;<br>6, 注入网站资源 @Value(“<a href="http://www.baidu.com&quot;)Resource" target="_blank" rel="noopener">http://www.baidu.com&quot;)Resource</a> url;<br>7，注入配置文件 @Value(“${book.name}}”)String bookName，使用配置要先编写配置文件.properties文件，如test.properties。在使用@PropertySource 加载配置文件，@PropertySource(“classpath:com/hgs/hello/test/test.properties”)(类上)，还需要配置一个PropertySourceConfigurer的bean。</p>
+<p>@PreDestroy 由JSR-250提供，在Bean销毁之前执行，等价于xml配置文件中bean的destroyMethod。</p>
+<hr>
+<h1 id="Value注解"><a href="#Value注解" class="headerlink" title="Value注解"></a>Value注解</h1><p>为属性注值，支持如下方式注入值：<br>1，注入字符 @Value(“Nemo”)String name;<br>2，注入操作系统属性 @Value(“#{systemProperties[‘os.name’]}”)String osName;<br>3， 注入表达式结果 @Value(“#{T(java.lang.Math).random()}”)String randomNumber;<br>4, 注入其他bean属性 @Value(“#{domeClass.name}”)String name;<br>5, 注入文件资源 @Value(“classpath:com/hgs/hello/text.txt”)String Resource file;<br>6, 注入网站资源 @Value(“<a href="http://www.baidu.com&quot;)Resource" target="_blank" rel="noopener">http://www.baidu.com&quot;)Resource</a> url;<br>7，注入配置文件 @Value(“${book.name}}”)String bookName，使用配置要先编写配置文件.properties文件，如test.properties。在使用@PropertySource 加载配置文件，@PropertySource(“classpath:com/hgs/hello/test/test.properties”)(类上)，还需要配置一个PropertySourceConfigurer的bean。</p>
 <hr>
 <h1 id="环境切换"><a href="#环境切换" class="headerlink" title="环境切换"></a>环境切换</h1><p>@Profile 通过设定Environment的ActiveProfiles来设定当前context需要使用的配置环境。（类或方法上）</p>
 <p>@Conditional Spring4中可以使用此注解定义条件化的bean，通过实现Condition接口，并重写matches方法，从而决定该bean是否被实例化。</p>
@@ -474,7 +711,7 @@ class Solution {
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        4
+                        6
                     </p>
                 </div>
             </div>
@@ -494,7 +731,7 @@ class Solution {
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        5
+                        10
                     </p>
                 </div>
             </div>
@@ -608,7 +845,7 @@ class Solution {
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/interview/" style="font-size: 20px;">interview</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a>
+        <a href="/tags/BFS/" style="font-size: 10px;">BFS</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/interview/" style="font-size: 15px;">interview</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/leetcode/" style="font-size: 20px;">leetcode</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/stack/" style="font-size: 10px;">stack</a> <a href="/tags/tree/" style="font-size: 10px;">tree</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a>
     </div>
 </div>
 
@@ -622,6 +859,44 @@ class Solution {
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/10/04/LongestSubstringWithoutRepeatingCharacters/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="LongestSubstringWithoutRepeatingCharacters">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-04T14:55:08.000Z">2019-10-04</time></div>
+                    <a href="/2019/10/04/LongestSubstringWithoutRepeatingCharacters/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LongestSubstringWithoutRepeatingCharacters</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/04/minDepth/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="minDepth">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-04T14:23:57.000Z">2019-10-04</time></div>
+                    <a href="/2019/10/04/minDepth/" class="title has-link-black-ter is-size-6 has-text-weight-normal">minDepth</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -680,25 +955,6 @@ class Solution {
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/09/23/firstBlog/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="firstBlog">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-23T15:25:13.000Z">2019-09-23</time></div>
-                    <a href="/2019/09/23/firstBlog/" class="title has-link-black-ter is-size-6 has-text-weight-normal">firstBlog</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -717,7 +973,7 @@ class Solution {
                     <span class="level-item">October 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -747,6 +1003,27 @@ class Solution {
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/BFS/">
+                        <span class="tag">BFS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DFS/">
+                        <span class="tag">DFS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/String/">
+                        <span class="tag">String</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/interview/">
                         <span class="tag">interview</span>
                         <span class="tag is-grey">2</span>
@@ -763,13 +1040,27 @@ class Solution {
                 <div class="control">
                     <a class="tags has-addons" href="/tags/leetcode/">
                         <span class="tag">leetcode</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/spring/">
                         <span class="tag">spring</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/stack/">
+                        <span class="tag">stack</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tree/">
+                        <span class="tag">tree</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -806,6 +1097,44 @@ class Solution {
         
         <article class="media">
             
+            <a href="/2019/10/04/LongestSubstringWithoutRepeatingCharacters/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="LongestSubstringWithoutRepeatingCharacters">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-04T14:55:08.000Z">2019-10-04</time></div>
+                    <a href="/2019/10/04/LongestSubstringWithoutRepeatingCharacters/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LongestSubstringWithoutRepeatingCharacters</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/04/minDepth/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="minDepth">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-04T14:23:57.000Z">2019-10-04</time></div>
+                    <a href="/2019/10/04/minDepth/" class="title has-link-black-ter is-size-6 has-text-weight-normal">minDepth</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/10/03/leetcode-sumoftwoint/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="leetcode_two-sum">
@@ -861,25 +1190,6 @@ class Solution {
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/09/23/firstBlog/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="firstBlog">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-23T15:25:13.000Z">2019-09-23</time></div>
-                    <a href="/2019/09/23/firstBlog/" class="title has-link-black-ter is-size-6 has-text-weight-normal">firstBlog</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -898,7 +1208,7 @@ class Solution {
                     <span class="level-item">October 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -928,6 +1238,27 @@ class Solution {
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/BFS/">
+                        <span class="tag">BFS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DFS/">
+                        <span class="tag">DFS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/String/">
+                        <span class="tag">String</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/interview/">
                         <span class="tag">interview</span>
                         <span class="tag is-grey">2</span>
@@ -944,13 +1275,27 @@ class Solution {
                 <div class="control">
                     <a class="tags has-addons" href="/tags/leetcode/">
                         <span class="tag">leetcode</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/spring/">
                         <span class="tag">spring</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/stack/">
+                        <span class="tag">stack</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tree/">
+                        <span class="tag">tree</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

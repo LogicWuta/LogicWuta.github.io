@@ -7,17 +7,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Tag: java - LogicWuta&#39;s Blog</title>
+<title>minDepth - LogicWuta&#39;s Blog</title>
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="LogicWuta&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/java/index.html">
+    <meta name="description" content="题目给定一个二叉树，找出其最小深度。 最小深度是从根节点到最近叶子节点的最短路径上的节点数量。 说明: 叶子节点是指没有子节点的节点。 示例: 给定二叉树 [3,9,20,null,null,15,7],  3  / \ 9  20   /  \  15   7返回它的最小深度  2. 来源：力扣（LeetCode）链接：https://leetcode-cn.com/problems/minim">
+<meta name="keywords" content="leetcode,tree,stack,BFS,DFS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="minDepth">
+<meta property="og:url" content="http://yoursite.com/2019/10/04/minDepth/index.html">
 <meta property="og:site_name" content="LogicWuta&#39;s Blog">
+<meta property="og:description" content="题目给定一个二叉树，找出其最小深度。 最小深度是从根节点到最近叶子节点的最短路径上的节点数量。 说明: 叶子节点是指没有子节点的节点。 示例: 给定二叉树 [3,9,20,null,null,15,7],  3  / \ 9  20   /  \  15   7返回它的最小深度  2. 来源：力扣（LeetCode）链接：https://leetcode-cn.com/problems/minim">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2019-10-04T17:02:13.275Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LogicWuta&#39;s Blog">
+<meta name="twitter:title" content="minDepth">
+<meta name="twitter:description" content="题目给定一个二叉树，找出其最小深度。 最小深度是从根节点到最近叶子节点的最短路径上的节点数量。 说明: 叶子节点是指没有子节点的节点。 示例: 给定二叉树 [3,9,20,null,null,15,7],  3  / \ 9  20   /  \  15   7返回它的最小深度  2. 来源：力扣（LeetCode）链接：https://leetcode-cn.com/problems/minim">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -88,7 +93,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/build-right.jpg" alt="LogicWuta&#39;s Blog" height="28">
+                <img src="/images/build-right.jpg" alt="minDepth" height="28">
             
             </a>
         </div>
@@ -139,29 +144,18 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">Tags</a></li>
-            <li class="is-active"><a href="#" aria-current="page">java</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-09-25T09:03:19.000Z">2019-09-25</time>
+                <time class="level-item has-text-grey" datetime="2019-10-04T14:23:57.000Z">2019-10-04</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 431 words)
+                    3 minutes read (About 470 words)
                 </span>
                 
                 
@@ -170,20 +164,88 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/09/25/建达笔试面试-1/">建达笔试面试</a>
+                minDepth
             
         </h1>
         <div class="content">
-            <h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><p>面试前需要先做一份笔试题。笔试题比较基础，但考得相当细。<br>面试完之后会有小哥过来技术面，根据试卷问相关问题，再谈一谈你做的项目。<br>之后是主管面试，谈一下你会的项目和框架，然后就是上家的工资，再问你对公司的看法或<br>者疑问。</p>
+            <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>给定一个二叉树，找出其最小深度。</p>
+<p>最小深度是从根节点到最近叶子节点的最短路径上的节点数量。</p>
+<p>说明: 叶子节点是指没有子节点的节点。</p>
+<p>示例:</p>
+<p>给定二叉树 [3,9,20,null,null,15,7],</p>
+<pre><code> 3
+ / \
+9  20
+  /  \
+ 15   7</code></pre><p>返回它的最小深度  2.</p>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/minimum-depth-of-binary-tree" target="_blank" rel="noopener">https://leetcode-cn.com/problems/minimum-depth-of-binary-tree</a><br>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。<br>这道题之前一次笔试时做到过，但因为太久没写过算法最后只写了深度优先。</p>
 <hr>
-<h2 id="笔试"><a href="#笔试" class="headerlink" title="笔试"></a>笔试</h2><p>笔试其实是比较简单的，不过本人才疏学浅，做的一般。<br>10道选择题，10道看代码，3道算法，6道数据库，2道简单题。<br>总体比较基础，但考很多细节。<br>看代码写输出个人感觉是最难的。</p>
-<p>算法偏简单，题目如下：<br>写一个函数将输入的字符串倒序输出。<br>写一个函数实现计算1+12+22+…+n2。<br>写一个函数实现身份证号的校验，15位或18位，最后一位可为字母，输出出生日期。<br>忘了还有一道前端题，写一个下拉框，点击下拉框中的属性可使文本框内出现这个属性值。</p>
-<p>数据库常规,多表查询，join,group by,order by,count。</p>
-<p>简答题：<br>session和cookies的异同点。<br>Java序列化的作用。</p>
-<hr>
-<h2 id="面试"><a href="#面试" class="headerlink" title="面试"></a>面试</h2><p>面试分两轮，技术面和主管面。<br>技术面主要会在试卷算法题和数据库题上面拓展。<br>小哥问了我算法第二题可以用递归吗？还有我做的项目里的数据库设计，开发流程，增加论<br>坛的二级回复功能怎么实现。</p>
-<hr>
+<h1 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h1><p>思路：节点为叶子节点返回1，否则返回左节点和右节点路径的最短值加1。</p>
+<pre><code>class Solution {
+    public int minDepth(TreeNode root) {
+        if (root == null){
+            return 0;
+        }
+        if (root.left == null &amp;&amp; root.right == null){
+            return 1;
+        }
+        if (root.left == null){
+            return minDepth(root.right) + 1;
+        }
+        if (root.right == null){
+            return minDepth(root.left) + 1;
+        }
+        return Math.min(minDepth(root.left),minDepth(root.right)) + 1;  
+    }
+}</code></pre><hr>
+<h1 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h1><p>思路：<br>定义一个LinkedList作为当前栈，存放要遍历的一层节点。<br>在循环中定义一个临时栈用于存放下一层节点。<br>循环遍历当前栈，判断每一个节点是否为叶子节点，是则返回，否则将节点的子节点压入临时栈中。当栈为空时，将临时栈的值赋给当前栈，路径值+1。<br>下次循环又重新声明临时栈，就可以一层一层地遍历二叉树了。</p>
+<pre><code>import java.util.LinkedList;
+class Solution {
+    public int minDepth(TreeNode root) {
+        LinkedList&lt;TreeNode&gt; stackp = new LinkedList&lt;TreeNode&gt;();
 
+
+        if (root == null){
+            return 0;
+        }
+        if (root.left == null &amp;&amp; root.right == null){
+            return 1;
+        }
+        int depth = 0;
+        stackp.add(root);
+        while(true){
+            depth++;
+            LinkedList&lt;TreeNode&gt; stackc = new LinkedList&lt;TreeNode&gt;();
+            while(!stackp.isEmpty()){
+                TreeNode n = stackp.poll();
+                if (n.left == null &amp;&amp; n.right == null){
+                    return depth;
+                }
+                if (n.left == null){
+                    stackc.add(n.right);
+                    continue;
+                }
+                if (n.right == null){
+                    stackc.add(n.left);
+                    continue;
+                }
+                stackc.add(n.left);
+                stackc.add(n.right);
+            }
+            stackp = stackc;
+        }
+    }
+}</code></pre><hr>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/BFS/">BFS</a>, <a class="has-link-grey -link" href="/tags/DFS/">DFS</a>, <a class="has-link-grey -link" href="/tags/leetcode/">leetcode</a>, <a class="has-link-grey -link" href="/tags/stack/">stack</a>, <a class="has-link-grey -link" href="/tags/tree/">tree</a>
+                </div>
+            </div>
         </div>
         
         
@@ -193,9 +255,62 @@
 
 
 
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<div class="notification is-danger">
+    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+        </div>
+    </div>
+</div>
 
 
 
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/10/04/LongestSubstringWithoutRepeatingCharacters/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">LongestSubstringWithoutRepeatingCharacters</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/10/03/leetcode-sumoftwoint/">
+                <span class="level-item">leetcode_two-sum</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
 </div>
@@ -855,7 +970,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/build-right.jpg" alt="LogicWuta&#39;s Blog" height="28">
+                    <img src="/images/build-right.jpg" alt="minDepth" height="28">
                 
                 </a>
                 <p class="is-size-7">

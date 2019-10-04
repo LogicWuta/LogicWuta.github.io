@@ -161,7 +161,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    11 minutes read (About 1722 words)
+                    11 minutes read (About 1723 words)
                 </span>
                 
                 
@@ -200,7 +200,9 @@
 <h1 id="bean属性支持"><a href="#bean属性支持" class="headerlink" title="bean属性支持"></a>bean属性支持</h1><p>@Scope 设置Spring容器创建Bean实例的方式（方法上，需要@Bean注解），设置类型包括：<br>1，Singleton 单例，默认模式，只有一个bean实例。<br>2，Protetype 每次调用新建一个bean。<br>3，Session web项目中给每个http session新建一个bean。<br>4，GlobeSession 给每一个 global http session新建一个bean。</p>
 <p>@StepScope 在Spring Batch中还有涉及。（不了解）</p>
 <p>@PostConstruct 由JSR-250提供，在构造函数执行完之后执行，等价于xml配置文件中bean的initMethod。</p>
-<h2 id="PreDestroy-由JSR-250提供，在Bean销毁之前执行，等价于xml配置文件中bean的destroyMethod"><a href="#PreDestroy-由JSR-250提供，在Bean销毁之前执行，等价于xml配置文件中bean的destroyMethod" class="headerlink" title="@PreDestroy 由JSR-250提供，在Bean销毁之前执行，等价于xml配置文件中bean的destroyMethod."></a>@PreDestroy 由JSR-250提供，在Bean销毁之前执行，等价于xml配置文件中bean的destroyMethod.</h2><h1 id="Value注解"><a href="#Value注解" class="headerlink" title="Value注解"></a>Value注解</h1><p>为属性注值，支持如下方式注入值：<br>1，注入字符 @Value(“Nemo”)String name;<br>2，注入操作系统属性 @Value(“#{systemProperties[‘os.name’]}”)String osName;<br>3， 注入表达式结果 @Value(“#{T(java.lang.Math).random()}”)String randomNumber;<br>4, 注入其他bean属性 @Value(“#{domeClass.name}”)String name;<br>5, 注入文件资源 @Value(“classpath:com/hgs/hello/text.txt”)String Resource file;<br>6, 注入网站资源 @Value(“<a href="http://www.baidu.com&quot;)Resource" target="_blank" rel="noopener">http://www.baidu.com&quot;)Resource</a> url;<br>7，注入配置文件 @Value(“${book.name}}”)String bookName，使用配置要先编写配置文件.properties文件，如test.properties。在使用@PropertySource 加载配置文件，@PropertySource(“classpath:com/hgs/hello/test/test.properties”)(类上)，还需要配置一个PropertySourceConfigurer的bean。</p>
+<p>@PreDestroy 由JSR-250提供，在Bean销毁之前执行，等价于xml配置文件中bean的destroyMethod。</p>
+<hr>
+<h1 id="Value注解"><a href="#Value注解" class="headerlink" title="Value注解"></a>Value注解</h1><p>为属性注值，支持如下方式注入值：<br>1，注入字符 @Value(“Nemo”)String name;<br>2，注入操作系统属性 @Value(“#{systemProperties[‘os.name’]}”)String osName;<br>3， 注入表达式结果 @Value(“#{T(java.lang.Math).random()}”)String randomNumber;<br>4, 注入其他bean属性 @Value(“#{domeClass.name}”)String name;<br>5, 注入文件资源 @Value(“classpath:com/hgs/hello/text.txt”)String Resource file;<br>6, 注入网站资源 @Value(“<a href="http://www.baidu.com&quot;)Resource" target="_blank" rel="noopener">http://www.baidu.com&quot;)Resource</a> url;<br>7，注入配置文件 @Value(“${book.name}}”)String bookName，使用配置要先编写配置文件.properties文件，如test.properties。在使用@PropertySource 加载配置文件，@PropertySource(“classpath:com/hgs/hello/test/test.properties”)(类上)，还需要配置一个PropertySourceConfigurer的bean。</p>
 <hr>
 <h1 id="环境切换"><a href="#环境切换" class="headerlink" title="环境切换"></a>环境切换</h1><p>@Profile 通过设定Environment的ActiveProfiles来设定当前context需要使用的配置环境。（类或方法上）</p>
 <p>@Conditional Spring4中可以使用此注解定义条件化的bean，通过实现Condition接口，并重写matches方法，从而决定该bean是否被实例化。</p>
@@ -298,7 +300,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        4
+                        6
                     </p>
                 </div>
             </div>
@@ -318,7 +320,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        5
+                        10
                     </p>
                 </div>
             </div>
@@ -432,7 +434,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/interview/" style="font-size: 20px;">interview</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a>
+        <a href="/tags/BFS/" style="font-size: 10px;">BFS</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/interview/" style="font-size: 15px;">interview</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/leetcode/" style="font-size: 20px;">leetcode</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/stack/" style="font-size: 10px;">stack</a> <a href="/tags/tree/" style="font-size: 10px;">tree</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a>
     </div>
 </div>
 
@@ -446,6 +448,44 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/10/04/LongestSubstringWithoutRepeatingCharacters/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="LongestSubstringWithoutRepeatingCharacters">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-04T14:55:08.000Z">2019-10-04</time></div>
+                    <a href="/2019/10/04/LongestSubstringWithoutRepeatingCharacters/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LongestSubstringWithoutRepeatingCharacters</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/04/minDepth/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="minDepth">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-04T14:23:57.000Z">2019-10-04</time></div>
+                    <a href="/2019/10/04/minDepth/" class="title has-link-black-ter is-size-6 has-text-weight-normal">minDepth</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -504,25 +544,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/09/23/firstBlog/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="firstBlog">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-23T15:25:13.000Z">2019-09-23</time></div>
-                    <a href="/2019/09/23/firstBlog/" class="title has-link-black-ter is-size-6 has-text-weight-normal">firstBlog</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -541,7 +562,7 @@
                     <span class="level-item">October 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -571,6 +592,27 @@
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/BFS/">
+                        <span class="tag">BFS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DFS/">
+                        <span class="tag">DFS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/String/">
+                        <span class="tag">String</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/interview/">
                         <span class="tag">interview</span>
                         <span class="tag is-grey">2</span>
@@ -587,13 +629,27 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/leetcode/">
                         <span class="tag">leetcode</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/spring/">
                         <span class="tag">spring</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/stack/">
+                        <span class="tag">stack</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tree/">
+                        <span class="tag">tree</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -630,6 +686,44 @@
         
         <article class="media">
             
+            <a href="/2019/10/04/LongestSubstringWithoutRepeatingCharacters/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="LongestSubstringWithoutRepeatingCharacters">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-04T14:55:08.000Z">2019-10-04</time></div>
+                    <a href="/2019/10/04/LongestSubstringWithoutRepeatingCharacters/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LongestSubstringWithoutRepeatingCharacters</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/04/minDepth/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="minDepth">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-04T14:23:57.000Z">2019-10-04</time></div>
+                    <a href="/2019/10/04/minDepth/" class="title has-link-black-ter is-size-6 has-text-weight-normal">minDepth</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/10/03/leetcode-sumoftwoint/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="leetcode_two-sum">
@@ -685,25 +779,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/09/23/firstBlog/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="firstBlog">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-23T15:25:13.000Z">2019-09-23</time></div>
-                    <a href="/2019/09/23/firstBlog/" class="title has-link-black-ter is-size-6 has-text-weight-normal">firstBlog</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -722,7 +797,7 @@
                     <span class="level-item">October 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -752,6 +827,27 @@
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/BFS/">
+                        <span class="tag">BFS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DFS/">
+                        <span class="tag">DFS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/String/">
+                        <span class="tag">String</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/interview/">
                         <span class="tag">interview</span>
                         <span class="tag is-grey">2</span>
@@ -768,13 +864,27 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/leetcode/">
                         <span class="tag">leetcode</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/spring/">
                         <span class="tag">spring</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/stack/">
+                        <span class="tag">stack</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tree/">
+                        <span class="tag">tree</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
